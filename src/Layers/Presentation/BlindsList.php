@@ -3,7 +3,8 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title></title>
+        <title>Blinds</title>
+        <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
     </head>
     <body>
         <h1>Blinds for: <?php echo $game->getName() . " (" . $game->getDatum() . ")"?></h1>
