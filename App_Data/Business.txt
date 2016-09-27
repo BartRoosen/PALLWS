@@ -1,0 +1,43 @@
+
+File: UserSVC.php
+    -> class UserSVC
+        -> public function getAllUsers()
+            => no added functionality just passing on the data
+            => returns a list of all users ordered by last name
+
+        -> public function emailExists($email) 
+            => checks if a given email address exists in the db by calling UserDAO::emailExists($email)
+            => return = true/false
+
+        -> public function addUser($voornaam, $achternaam, $straat, $nummer, $bus, $postcode, $gemeente, $email, $paswoord, $actief, $admin) 
+            => hashes the password before passing the data to UserDAO::addUser(...)   
+            => adds new user in db
+
+        -> public function checkPaswsord($email, $paswoord)
+            => calls UserDAO::getUserByEmail($email)
+            => receives either NULL or user object
+            => return:
+                => if NULL was received => return = false
+                => if user object was received, the password in this object is checked
+                    => if passwords don't match => return = false
+                    => if passwords match => return = true
+
+        -> public function getUserByEmailAndPassword($email, $paswoord)
+            => hashes the password
+            => calls UserDAO::getUserByEmailAndPassword(...)
+            => returns an object of User
+
+        -> public function getUserByEmail($email)
+            => calls UserDAO::getUserByEmail($email)
+            => returns either NULL or user object
+
+        -> public function deleteUser($uid)
+            => UserDAO::deleteUser($uid);
+            => deletes user using the id
+
+        -> public function activeSwitch($uid)
+            => calls getUserById($uid) to receive an object of users
+            => calls UserDAO::activeSwitch($uid, $user->getActief()) to switch the actief status (0, 1)
+
+        -> public function getUserById($uid)
+            => returns the outcome of UserDAO::getUserById($uid)
