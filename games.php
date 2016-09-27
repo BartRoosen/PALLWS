@@ -33,6 +33,12 @@ elseif(isset($_GET["action"]) && $_GET["action"] == "addLevel"){
 	}
 	header("location: games.php?action=showBlinds&game=" . $_GET["game"]);
 }
+elseif(isset($_GET["action"]) && $_GET["action"] == "start"){
+	$game = GameSVC::getGameById($_GET["game"]);
+	$json_blinds = BlindSVC::getJsonString($_GET["game"]);
+	include("src/Layers/Presentation/Clock.php");
+	exit(0);
+}
 else{
 	$gamesLijst = GameSVC::getAll();
 	include("src/Layers/Presentation/GamesList.php");
