@@ -1,0 +1,1 @@
+This folder contains the javescript/jQuery/... file(s)

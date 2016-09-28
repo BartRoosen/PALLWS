@@ -1,4 +1,4 @@
 <?php
 //index.php
 
-header('location: games.php');
+//Here you can redirect the visitor to wherever you want...
