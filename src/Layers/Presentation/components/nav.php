@@ -8,7 +8,7 @@
 	//	=> Page name in presentation folder = EXAMPLE.php 
 ?>
 
-
+<h1>Navbar</h1>
 <!--
 	?page => name of the page to go to
 -->
