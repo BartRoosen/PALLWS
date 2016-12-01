@@ -1,4 +1,3 @@
-<?php if(!isset($_SESSION["login"]) || !$_SESSION["login"]){ header('location: ../../../'); }?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -16,7 +15,7 @@
                 </div>
                 <div class="col-md-10">
                     <div class="container-fluid">
-                        <h1>Page title</h1>
+                        <h1>Index</h1>
                     </div>
                 </div>
             </div>
