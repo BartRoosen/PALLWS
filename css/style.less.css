@@ -1,6 +1,23 @@
+#header{
+	#vrijwilligersgezocht{
+		color: orange;
+		font-size: 2em;
+		margin-top: 2em;
+		text-shadow: 2px 2px 3px #000000;
+		padding-top:2em;
+	}
+	#logo{
+		margin-top:1em;
+		width: 80%;
+	}
+}
+#mobilenavbar{
+	display: none;
+}
 #content-holder{
 	outline: 1px solid red;
 	padding-bottom: 2em;
+	min-height:40vh;
 }
 
 #footer{
@@ -14,5 +31,55 @@
 	a{
 		color: #fff;
     	text-decoration: none;
+	}
+}
+
+.nav-item{
+	width: 100%;
+}
+
+
+@media screen and (max-width: 992px){
+	#header{
+		#vrijwilligersgezocht{
+			
+		}
+		#logo{
+			width: 40%;
+		}
+	}
+	#footer{
+		position: relative;
+		bottom: 0;
+		width: 100%;
+		.footercols{
+			padding-bottom: 1em;
+		}
+	}
+}
+
+@media screen and (max-width: 768px){
+	#header{
+		#vrijwilligersgezocht{
+			font-size: 1.5em;
+			padding-top:0;
+		}
+		#logo{
+		}
+	}
+	
+	#footer{
+		.footercols{
+			padding-bottom: 1em;
+		}
+	}
+	#content-holder{
+		min-height:60vh;
+	}
+}
+
+@media screen and (max-width: 414px){
+	#mobilenavbar{
+		display: block;
 	}
 }

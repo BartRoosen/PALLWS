@@ -19,14 +19,16 @@ if(!isset($_SESSION["login"]) || !$_SESSION["login"]){
 	
 	if(isset($_SESSION["page"])){
 		switch ($_SESSION["page"]) {
-			
+			case 'home':
+				break;
 			default:
 				# code...
 				break;
 		}
 		include("src/Layers/Presentation/" . $_SESSION["page"] . ".php");
 	} else {
-		include("src/Layers/Presentation/index.php");
+		SessionHandler::setValue(array('page' => 'home'));
+		header('location: ./');
 	}
 	exit(0);
 } else {
