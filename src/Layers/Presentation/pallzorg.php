@@ -18,6 +18,8 @@
                         <div class="page-content">
                             <h4><?= $content['title'] ?></h4>
                             <p><?= $content['article'] ?></p>
+                            <p><?= $content['title2'] ?></p>
+                            <p><?= $content['article2'] ?></p>
                         </div>
                     </section>
                 </div>
@@ -30,7 +32,7 @@
             </div>
         </footer>
         <script>
-            $('#home').addClass("active");
+            $('#pallzorg').addClass("active");
         </script>
     </body>
 </html>

@@ -16,8 +16,24 @@
                     </header>
                     <section>
                         <div class="page-content">
-                            <h4><?= $content['title'] ?></h4>
-                            <p><?= $content['article'] ?></p>
+                        	<div class="text-center" style="padding: 0 20%">
+                        		<p><?= $content['art1'] ?></p>
+                        	</div>
+                            <h4><?= $content['tit1'] ?></h4>
+                            <p><?= $content['art2'] ?></p>
+                            <p><?= $content['art3'] ?></p>
+                            <h4><?= $content['tit2'] ?></h4>
+                            <p><?= $content['art4'] ?></p>
+                            <p><?= $content['art5'] ?></p>
+                            <p><?= $content['art6'] ?></p>
+                            <ul>
+                            	<?php
+                            		foreach ($content['list'] as $value) {
+                            			print("<li>".$value."</li>");
+                            		}
+                            	?>
+                            </ul>
+                            <p><?= $content['art7'] ?></p>
                         </div>
                     </section>
                 </div>
@@ -30,7 +46,7 @@
             </div>
         </footer>
         <script>
-            $('#home').addClass("active");
+            $('#vrijwilligers').addClass("active");
         </script>
     </body>
 </html>

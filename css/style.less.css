@@ -1,4 +1,20 @@
-#header{
+body{
+	height: 100%;
+	background-color: rgb(220, 253, 248);
+	color: rgb(48, 102, 93);
+}
+#header-section{
+	padding: 0;
+	.ital{
+		font-style: italic;
+	}
+	.row{
+		.col-md-8, .col-lg-6{
+			background-color: #fff;
+			box-shadow: 0px 0px 10px 5px #444;
+			padding: 0;
+		}
+	}
 	#vrijwilligersgezocht{
 		color: orange;
 		font-size: 2em;
@@ -9,17 +25,43 @@
 	#logo{
 		margin-top:1em;
 		width: 80%;
+		height: 80%;
+	}
+	.page-content{
+		padding: 2em 2em 30em 2em;
+	}
+	#mobilenavbar{
+		display: none;
+	}
+	.menu-background{
+		background: rgb(24, 49, 45);
+		ul{
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			li{
+				display: inline;
+				a{
+					text-decoration: none;
+					display: inline-block;
+					padding: 1em;
+					color:#fff;
+					&:hover{
+						//background: rgb(220, 253, 248);
+						color: rgb(48, 102, 93);
+					}
+
+				}
+			}
+			.active{
+				background: rgb(48, 102, 93);
+				&:hover{
+					color: #fff;
+				};
+			}
+		}
 	}
 }
-#mobilenavbar{
-	display: none;
-}
-#content-holder{
-	outline: 1px solid red;
-	padding-bottom: 2em;
-	min-height:40vh;
-}
-
 #footer{
 	position: fixed;
 	bottom: 0;
@@ -33,53 +75,158 @@
     	text-decoration: none;
 	}
 }
-
 .nav-item{
 	width: 100%;
 }
 
 
 @media screen and (max-width: 992px){
-	#header{
+	
+}
+
+/*
+	i-pad
+*/
+@media screen and (max-width: 768px){
+	body{
+		height: 100%;
+		background-color: rgb(220, 253, 248);
+		color: rgb(48, 102, 93);
+	}
+	#header-section{
+		padding: 0;
+		.ital{
+			font-style: italic;
+		}
+		.row{
+			.col-md-8, .col-lg-6{
+				background-color: #fff;
+				box-shadow: none;
+				padding: 1em;
+			}
+		}
 		#vrijwilligersgezocht{
-			
+			color: orange;
+			font-size: 2em;
+			margin-top: 2em;
+			text-shadow: 2px 2px 3px #000000;
+			padding-top:2em;
 		}
 		#logo{
-			width: 40%;
+			margin-top:1em;
+			width: 80%;
+			height: 80%;
+		}
+		.page-content{
+			padding: 2em 2em 30em 2em;
+		}
+		#mobilenavbar{
+			display: none;
+		}
+		.menu-background{
+			background: rgb(24, 49, 45);
+			ul{
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				li{
+					display: inline;
+					a{
+						text-decoration: none;
+						display: inline-block;
+						padding: 1em;
+						color:#fff;
+						&:hover{
+							//background: rgb(220, 253, 248);
+							color: rgb(48, 102, 93);
+						}
+
+					}
+				}
+				.active{
+					background: rgb(48, 102, 93);
+					&:hover{
+						color: #fff;
+					};
+				}
+			}
+		}
+	}
+	#footer{
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		background-color: rgb(48, 102, 93);
+		border-top: 5px solid rgb(24, 49, 45);
+		padding: 1em 0;
+		color: white;
+		a{
+			color: #fff;
+	    	text-decoration: none;
+		}
+	}
+	.nav-item{
+		width: 100%;
+	}
+}
+/*
+	smart-phones up right
+*/
+@media screen and (max-width: 414px){
+	body{
+		height: 100%;
+		background-color: rgb(220, 253, 248);
+		color: rgb(48, 102, 93);
+	}
+	#header-section{
+		padding: 0;
+		.ital{
+			font-style: italic;
+		}
+		.row{
+			.col-md-8, .col-lg-6{
+				background-color: #fff;
+				box-shadow: none;
+				padding: 1em;
+			}
+		}
+		#vrijwilligersgezocht{
+			color: orange;
+			font-size: 2em;
+			margin-top: 2em;
+			text-shadow: 2px 2px 3px #000000;
+			padding-top:2em;
+		}
+		#logo{
+			margin-top:1em;
+			width: 80%;
+			height: 80%;
+		}
+		.page-content{
+			padding: 2em 2em 5em 2em;
+		}
+		#mobilenavbar{
+			display: block;
+		}
+		.menu-background{
+			display: none;
 		}
 	}
 	#footer{
 		position: relative;
 		bottom: 0;
 		width: 100%;
-		.footercols{
-			padding-bottom: 1em;
+		background-color: rgb(48, 102, 93);
+		border-top: 5px solid rgb(24, 49, 45);
+		padding: 1em 0;
+		color: white;
+		a{
+			color: #fff;
+	    	text-decoration: none;
 		}
+	}
+	.nav-item{
+		width: 100%;
 	}
 }
 
-@media screen and (max-width: 768px){
-	#header{
-		#vrijwilligersgezocht{
-			font-size: 1.5em;
-			padding-top:0;
-		}
-		#logo{
-		}
-	}
-	
-	#footer{
-		.footercols{
-			padding-bottom: 1em;
-		}
-	}
-	#content-holder{
-		min-height:60vh;
-	}
-}
-
-@media screen and (max-width: 414px){
-	#mobilenavbar{
-		display: block;
-	}
-}

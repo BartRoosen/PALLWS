@@ -16,8 +16,14 @@
                     </header>
                     <section>
                         <div class="page-content">
-                            <h4><?= $content['title'] ?></h4>
-                            <p><?= $content['article'] ?></p>
+                            <h4><?= $content['tit1'] ?></h4>
+                            <ul>
+                                <?php
+                                    foreach ($files as $key => $value) {
+                                        print("<li><a href='getuigenissen/".$key."' target='_blank'>".$value."</a></li>");
+                                    }
+                                ?>
+                            </ul>
                         </div>
                     </section>
                 </div>
@@ -30,7 +36,7 @@
             </div>
         </footer>
         <script>
-            $('#home').addClass("active");
+            $('#getuigenissen').addClass("active");
         </script>
     </body>
 </html>

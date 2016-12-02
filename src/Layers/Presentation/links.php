@@ -16,8 +16,17 @@
                     </header>
                     <section>
                         <div class="page-content">
-                            <h4><?= $content['title'] ?></h4>
-                            <p><?= $content['article'] ?></p>
+                            <h4><?= $content['tit1'] ?></h4>
+                            <ul>
+                                <?php
+                                    foreach ($content['links'] as $value) {
+                                        print("<li>");
+                                        print($value['tit'] . ": ");
+                                        print("<a href='".$value['path']."' target='_blank'>" . $value['link'] . "</a>");
+                                        print("</li>");
+                                    }
+                                ?>
+                            </ul>
                         </div>
                     </section>
                 </div>
@@ -30,7 +39,7 @@
             </div>
         </footer>
         <script>
-            $('#home').addClass("active");
+            $('#links').addClass("active");
         </script>
     </body>
 </html>

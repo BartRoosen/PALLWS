@@ -1,15 +1,8 @@
 <?php
 require_once("bootstrap.php");  //do not forget this line as it wil make sure you can use the namespaces
 
-use Layers\Business\KostenSVC;
-use Layers\Business\VendorSVC;
-use Layers\Business\CategorySVC;
-use Layers\Business\TagsSVC;
-use Layers\Business\KostTagSVC;
-use Layers\Business\CreditorsSVC;
-use Layers\Business\TransfersSVC;
-use Layers\Business\DevisionKeySVC;
 use Layers\Business\SessionHandler;
+use Layers\Content\Text;
 
 SessionHandler::start();
 
@@ -20,6 +13,30 @@ if(!isset($_SESSION["login"]) || !$_SESSION["login"]){
 	if(isset($_SESSION["page"])){
 		switch ($_SESSION["page"]) {
 			case 'home':
+				$content = Text::home();
+				break;
+			case 'pallzorg':
+				$content = Text::pallzorg();
+				break;
+			case 'vrijwilligers':
+				$content = Text::vrijwilligers();
+				break;
+			case 'vrijwilligerworden':
+				$content = Text::vrijwilligerworden();
+				break;
+			case 'getuigenissen':
+				$content = Text::getuigenissen();
+				$arr_files = scandir('getuigenissen');
+				$files = array();
+				foreach ($arr_files as $value) {
+					if($value != "." && $value != ".."){
+						$arr_parts = explode(".", $value);
+						$files[$value] = $arr_parts[0];
+					}
+				}
+				break;
+			case 'links':
+				$content = Text::links();
 				break;
 			default:
 				# code...
