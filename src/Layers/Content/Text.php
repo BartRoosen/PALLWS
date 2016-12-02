@@ -126,4 +126,11 @@ class Text{
 					),
 			);
 	}
+
+	public function loginfail()
+	{
+		return array(
+				'message' =>		'Aanmelden is mislukt, controleer uw paswoord en probeer opnieuw',
+			);
+	}
 }

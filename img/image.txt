@@ -1,3 +1,0 @@
-store images in this folder
-
-create subfolders as you please

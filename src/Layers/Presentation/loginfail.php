@@ -16,14 +16,9 @@
                     </header>
                     <section>
                         <div class="page-content">
-                            <h4><?= $content['tit1'] ?></h4>
-                            <ul>
-                                <?php
-                                    foreach ($files as$value) {
-                                        print("<li><a href='".$value['path']."' target='_blank'>".$value['name']."</a></li>");
-                                    }
-                                ?>
-                            </ul>
+                            <div class="alert alert-danger">
+                                <h4><span class="glyphicon glyphicon-warning-sign"></span> <?= $content['message'] ?></h4>
+                            </div>
                         </div>
                     </section>
                 </div>
@@ -36,7 +31,7 @@
             </div>
         </footer>
         <script>
-            $('#getuigenissen').addClass("active");
+            $('#home').addClass("active");
         </script>
     </body>
 </html>

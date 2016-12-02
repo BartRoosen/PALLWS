@@ -29,15 +29,17 @@ class SessionHandler{
 
 	public function unsetValue($arr)
 	{
-		self::start();
 		foreach ($arr as $value) {
 			unset($_SESSION[$value]);
 		}
+		self::start();
 	}
 
 	public function stop()
 	{
-		self::start();
+		if(!isset($_SESSION)){
+			self::start();
+		}
 		session_destroy();
 	}
 }

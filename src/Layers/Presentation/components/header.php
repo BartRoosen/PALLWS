@@ -1,3 +1,4 @@
+<?php include(__DIR__ . '/modal.php') ?>
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-sm-6 col-md-6 col-lg-6" style="box-shadow: none; overflow: hidden">

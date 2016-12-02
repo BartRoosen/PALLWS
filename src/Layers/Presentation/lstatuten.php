@@ -1,3 +1,4 @@
+<?php if(!$_SESSION['login']){ header('location: ../../../'); } ?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -12,17 +13,17 @@
                             <?php require_once(__DIR__ . "/components/mobilenav.php"); ?>
                         </div>
                         <?php require_once(__DIR__ . "/components/header.php"); ?>
-                        <?php require_once(__DIR__ . "/components/nav.php"); ?>
+                        <?php require_once(__DIR__ . "/components/lnav.php"); ?>
                     </header>
                     <section>
                         <div class="page-content">
-                            <h4><?= $content['tit1'] ?></h4>
+                            <h4>Statuten</h4>
                             <ul>
-                                <?php
-                                    foreach ($files as$value) {
-                                        print("<li><a href='".$value['path']."' target='_blank'>".$value['name']."</a></li>");
-                                    }
-                                ?>
+                            <?php
+                                foreach ($forms as $value) {
+                                    print("<li><a href='".$value['path']."' target='_blank'>".$value['fullname']."</a></li>");
+                                }
+                            ?>
                             </ul>
                         </div>
                     </section>
@@ -36,7 +37,7 @@
             </div>
         </footer>
         <script>
-            $('#getuigenissen').addClass("active");
+            $('#lstatuten').addClass("active");
         </script>
     </body>
 </html>
