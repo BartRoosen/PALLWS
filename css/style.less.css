@@ -24,8 +24,7 @@ body{
 	}
 	#logo{
 		margin-top:1em;
-		width: 80%;
-		height: 80%;
+		width:20px;
 	}
 	.page-content{
 		padding: 2em 2em 30em 2em;
@@ -114,8 +113,6 @@ body{
 		}
 		#logo{
 			margin-top:1em;
-			width: 80%;
-			height: 80%;
 		}
 		.page-content{
 			padding: 2em 2em 30em 2em;
@@ -199,8 +196,6 @@ body{
 		}
 		#logo{
 			margin-top:1em;
-			width: 80%;
-			height: 80%;
 		}
 		.page-content{
 			padding: 2em 2em 5em 2em;

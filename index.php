@@ -3,6 +3,7 @@ require_once("bootstrap.php");  //do not forget this line as it wil make sure yo
 
 use Layers\Business\SessionHandler;
 use Layers\Business\Filegetter;
+use Layers\Business\KalenderSVC;
 use Layers\Content\Text;
 
 SessionHandler::start();
@@ -63,6 +64,12 @@ if(!isset($_SESSION["login"]) /*|| !$_SESSION["login"]*/){
 				break;
 			case 'ldocumenten':
 				$forms = Filegetter::getAll('documenten');
+				break;
+			case 'lkal':
+				$kSVC = new KalenderSVC();
+				$weekdagen = $kSVC->daysDutch();
+				$kalender = $kSVC->getAll($_SESSION['year']);
+				$yearsDD = $kSVC->yearsDropDown();
 				break;
 			default:
 				# code...

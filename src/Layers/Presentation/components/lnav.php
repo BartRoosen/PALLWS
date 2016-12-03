@@ -19,7 +19,7 @@
 		<?php
 			if(isset($_SESSION['user']) && $_SESSION['user'] == 'admin'){
 		?>
-		<li><a href="#" id=''>Kalender beheer</a></li>
+		<li><a href="navcontroller.php?page=lkal" id='lkal'>Kalender beheer</a></li>
 		<?php
 			};
 		?>

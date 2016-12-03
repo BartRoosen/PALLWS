@@ -5,8 +5,8 @@
     <body>
         <div class="container-fluid" id="header-section">
             <div class="row">
-                <div class="col-md-2 col-lg-3"></div>
-                <div class="col-md-8 col-lg-6">
+                <div class="col-md-2 col-lg-2 col-xl-3"></div>
+                <div class="col-md-8 col-lg-8 col-xl-6">
                     <header>
                         <div class="container-fluid" id="mobilenavbar">
                             <?php require_once(__DIR__ . "/components/mobilenav.php"); ?>
@@ -22,7 +22,7 @@
                         </div>
                     </section>
                 </div>
-                <div class="col-md-2 col-lg-3"></div>
+                <div class="col-md-2 col-lg-2 col-xl-3"></div>
             </div>
         </div>
         <footer>

@@ -20,12 +20,14 @@ if(isset($_POST['submit']) && $_POST['submit'] == 1){
 					'login' => true,
 					'user' => 'member',
 					'page' => 'lhome',
+					'year' => date('Y'),
 				));
 		} elseif ($user == 'admin'){
 			SessionHandler::setValue(array(
 					'login' => true,
 					'user' => 'admin',
 					'page' => 'lhome',
+					'year' => date('Y'),
 				));
 		}
 	} else {
