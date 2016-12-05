@@ -12,10 +12,6 @@
 <div class="menu-background">
 	<ul>
 		<li><a href="navcontroller.php?page=lhome" id='lhome'>Kalender</a></li>
-		<li><a href="navcontroller.php?page=lformulieren" id='lformulieren'>Formulieren</a></li>
-		<li><a href="navcontroller.php?page=lstatuten" id='lstatuten'>Statuten</a></li>
-		<li><a href="navcontroller.php?page=lreglement" id='lreglement'>Reglement</a></li>
-		<li><a href="navcontroller.php?page=ldocumenten" id='ldocumenten'>Documenten</a></li>
 		<?php
 			if(isset($_SESSION['user']) && $_SESSION['user'] == 'admin'){
 		?>
@@ -23,6 +19,10 @@
 		<?php
 			};
 		?>
+		<li><a href="navcontroller.php?page=lformulieren" id='lformulieren'>Formulieren</a></li>
+		<li><a href="navcontroller.php?page=lstatuten" id='lstatuten'>Statuten</a></li>
+		<li><a href="navcontroller.php?page=lreglement" id='lreglement'>Reglement</a></li>
+		<li><a href="navcontroller.php?page=ldocumenten" id='ldocumenten'>Documenten</a></li>
 		<li><a href="login.php?action=logoff">Afmelden</a></li>
 	</ul>
 </div>

@@ -1,4 +1,4 @@
-<?php if(!$_SESSION['login']){ header('location: ../../../'); } ?>
+<?php if(!$_SESSION['login'] && $_SESSION['login'] == 'admin'){ header('location: ../../../'); } ?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -28,6 +28,7 @@
                                     }
                                 ?>
                             </select>
+                            <a href="navcontroller.php?page=levent" class="btn btn-success">Evenement toevoegen</a>
                             <h4>Kalender beheer</h4>
                             <hr>
                             <table class="table table-hover table-bordered">
@@ -39,6 +40,7 @@
                                         <th>Evenement</th>
                                         <th>Beschrijving</th>
                                         <th>Lokatie</th>
+                                        <th style="width: 70px;">Actie</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -51,6 +53,10 @@
                                             print("<td>".$line['event']."</td>");
                                             print("<td>".$line['comment']."</td>");
                                             print("<td>".$line['location']."</td>");
+                                            print("<td>
+                                                        <a href='eventcontroller.php?action=delete&id=".$line['id']."' class='btn btn-danger btn-xs pull-right' alt='Delete' title='Verwijder dit evenement' style='margin:0.1em'><span class='glyphicon glyphicon-trash'></span></a>
+                                                        <a href='eventcontroller.php?action=edit&id=".$line['id']."' class='btn btn-info btn-xs pull-right' alt='Edit' title='Wijzig dit evenement' style='margin:0.1em'><span class='glyphicon glyphicon-edit'></span></span></a>
+                                                   </td>");
                                             print("</tr>");
                                         }
                                     ?>

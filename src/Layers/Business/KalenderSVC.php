@@ -12,6 +12,31 @@ class KalenderSVC{
 		return KalenderDAO::getAll($year);
 	}
 
+	public function add($arr)
+	{
+		KalenderDAO::add($arr);
+	}
+
+	public function delete($id)
+	{
+		KalenderDAO::delete($id);
+	}
+
+	public function getEventById($id)
+	{
+		return KalenderDAO::getEventById($id);
+	}
+
+	public function update($arr)
+	{
+		KalenderDAO::update($arr);
+	}
+
+	public function getKalender()
+	{
+		return KalenderDAO::getKalender();
+	}
+
 	public function daysDutch()
 	{
 		return array(

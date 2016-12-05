@@ -4,6 +4,7 @@ require_once("bootstrap.php");  //do not forget this line as it wil make sure yo
 use Layers\Business\SessionHandler;
 use Layers\Business\Filegetter;
 use Layers\Business\KalenderSVC;
+use Layers\Business\EventsSVC;
 use Layers\Content\Text;
 
 SessionHandler::start();
@@ -50,9 +51,12 @@ if(!isset($_SESSION["login"]) /*|| !$_SESSION["login"]*/){
 	include("src/Layers/Presentation/" . $_SESSION["page"] . ".php");
 } elseif (isset($_SESSION['login']) && $_SESSION['login']) {
 	//pages that do require login come here
-
 	if(isset($_SESSION["page"])){
 		switch ($_SESSION["page"]) {
+			case 'lhome':
+				$kSVC = new KalenderSVC();
+				$weekdagen = $kSVC->daysDutch();
+				$kalender = $kSVC->getKalender();
 			case 'lformulieren':
 				$forms = Filegetter::getAll('formulieren');
 				break;
@@ -66,11 +70,28 @@ if(!isset($_SESSION["login"]) /*|| !$_SESSION["login"]*/){
 				$forms = Filegetter::getAll('documenten');
 				break;
 			case 'lkal':
-				$kSVC = new KalenderSVC();
-				$weekdagen = $kSVC->daysDutch();
-				$kalender = $kSVC->getAll($_SESSION['year']);
-				$yearsDD = $kSVC->yearsDropDown();
+				if($_SESSION['login'] == 'admin'){
+					$kSVC = new KalenderSVC();
+					$weekdagen = $kSVC->daysDutch();
+					$kalender = $kSVC->getAll($_SESSION['year']);
+					$yearsDD = $kSVC->yearsDropDown();
+				} else {
+					SessionHandler::stop();
+					header('location: ./');
+				}
 				break;
+			case 'levent':
+				if($_SESSION['login'] == 'admin'){
+					$events = EventsSVC::getActiveEvents();
+				} else {
+					SessionHandler::stop();
+					header('location: ./');
+				}
+				break;	
+			case 'leventedit':
+				$eventdetails = KalenderSVC::getEventById($_SESSION['edit']);
+				//unset($_SESSION['edit']);
+				break;			
 			default:
 				# code...
 				break;

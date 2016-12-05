@@ -18,7 +18,7 @@
             </div>
       </div>
       <div class="modal-footer">
-        <button type="submit" name="submit" value="1" class="btn btn-seccess">Inloggen</button>
+        <button type="submit" name="submit" value="1" class="btn btn-success">Inloggen</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Annuleer</button>
       </div>
       </form>

@@ -22,9 +22,8 @@ body{
 		text-shadow: 2px 2px 3px #000000;
 		padding-top:2em;
 	}
-	#logo{
+	#pallium-logo{
 		margin-top:1em;
-		width:20px;
 	}
 	.page-content{
 		padding: 2em 2em 30em 2em;
@@ -79,8 +78,10 @@ body{
 }
 
 
-@media screen and (max-width: 992px){
-	
+@media screen and (min-hight: 770px){
+	#footer{
+		position: relative;
+	}
 }
 
 /*
@@ -111,7 +112,7 @@ body{
 			text-shadow: 2px 2px 3px #000000;
 			padding-top:2em;
 		}
-		#logo{
+		#pallium-logo{
 			margin-top:1em;
 		}
 		.page-content{
@@ -150,7 +151,7 @@ body{
 		}
 	}
 	#footer{
-		position: fixed;
+		//position: fixed;
 		bottom: 0;
 		width: 100%;
 		background-color: rgb(48, 102, 93);
@@ -194,7 +195,7 @@ body{
 			text-shadow: 2px 2px 3px #000000;
 			padding-top:2em;
 		}
-		#logo{
+		#pallium-logo{
 			margin-top:1em;
 		}
 		.page-content{

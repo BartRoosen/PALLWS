@@ -1,3 +1,5 @@
 src/Layers/Data/DBConfig.php
 
 AppData/db.sql
+
+AppData/session.txt
