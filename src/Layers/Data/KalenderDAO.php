@@ -29,7 +29,7 @@ class KalenderDAO{
 
 	public function add($arr)
 	{
-		$sql = "insert into kalender (datum, tijd, event_id, comment, location) values (:datum, :tijd, :event_id, :comment, :location)";
+		$sql = "insert into pallium_be.kalender (datum, tijd, event_id, comment, location) values (:datum, :tijd, :event_id, :comment, :location)";
 		$dbh = new PDO(DBConfig::$DB_CONNECTIONSTRING, DBConfig::$DB_USER, DBConfig::$DB_PASSWORD);
 		$stmt = $dbh->prepare($sql);
 		$stmt->execute(array(
