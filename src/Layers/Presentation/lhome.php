@@ -17,26 +17,41 @@
                     </header>
                     <section>
                         <div class="page-content">
+                            
                             <?php
                                 foreach ($kalender as $value) {
-                                    print("<div class='panel panel-primary'>");
-                                    print("<div class='panel-heading' style='background: rgb(48, 102, 93)'>");
-                                        print("<strong>".$weekdagen[$value['day']]." ".date('d-m-Y', strtotime($value['datum']))." (".$value['time'].")</strong>");
-                                    print("</div>");
-                                    print("<div class='panel-body'>");
-                                        if($value['event'] != null){
-                                            print("<p>Evenement: ".$value['event']."</p>");
+                                    $arraylength = count($value);
+                                    $teller = 0;
+                                    foreach ($value as $d) {
+                                        $teller++;
+                                        if($teller === 1){
+                                            print("<div class='panel panel-primary'>");
+                                            print("<div class='panel-heading' style='background: rgb(48, 102, 93)'>");
+                                            print("<strong>".$weekdagen[$d['day']]." ".date('d-m-Y', strtotime($d['datum']))."</strong>");
+                                            print("</div>");
                                         }
-                                        if($value['location'] != null){
-                                            print("<p>Lokatie: ".$value['location']."</p>");
+                                        print("<div class='panel-body'>");
+                                            if($d['event'] == null){
+                                                print("<p><strong>".$d['time']."</strong></p>");
+                                            } else {
+                                                print("<p><strong>".$d['time'].": ".$d['event']."</strong></p>");
+                                            }
+                                            if($d['location'] != null){
+                                                print("<p>Lokatie: ".$d['location']."</p>");
+                                            }
+                                            if($d['comment'] != null){
+                                                print("<p>Kommentaar: ".$d['comment']."</p>");
+                                            }
+                                        print("</div>");
+                                        if($teller == $arraylength){
+                                            print("</div>");
+                                        } else {
+                                            print("<hr>");
                                         }
-                                        if($value['comment'] != null){
-                                            print("<p>Kommentaar: ".$value['comment']."</p>");
-                                        }
-                                    print("</div>");
-                                    print("</div>");
+                                    }
                                 }
                             ?>
+                            </div>
                         </div>
                     </section>
                 </div>

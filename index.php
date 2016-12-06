@@ -89,6 +89,7 @@ if(!isset($_SESSION["login"]) /*|| !$_SESSION["login"]*/){
 				}
 				break;	
 			case 'leventedit':
+				$events = EventsSVC::getActiveEvents();
 				$eventdetails = KalenderSVC::getEventById($_SESSION['edit']);
 				//unset($_SESSION['edit']);
 				break;			

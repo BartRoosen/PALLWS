@@ -34,7 +34,12 @@ class KalenderSVC{
 
 	public function getKalender()
 	{
-		return KalenderDAO::getKalender();
+		$kalender = KalenderDAO::getKalender();
+		$arr = array();
+		foreach ($kalender as $value) {
+			$arr[$value['datum']][] = $value;
+		}
+		return $arr;
 	}
 
 	public function daysDutch()

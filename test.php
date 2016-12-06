@@ -7,15 +7,4 @@ use Layers\Business\Filegetter;
 use Layers\Business\KalenderSVC;
 use Layers\Business\EventsSVC;
 
-$str = "2016-12-06";
-
-$date = strtotime($str);
-
-$now = date('d-m-Y');
-$now = strtotime($now);
-echo $now . "<br>";
-
-if($now <= $date)
-{
-	echo date('d-m-Y', $date);
-}
+print_r(KalenderSVC::getKalender());
