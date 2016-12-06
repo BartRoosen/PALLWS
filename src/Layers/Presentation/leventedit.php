@@ -70,7 +70,7 @@
             </div>
         </div>
         <footer>
-            <div class="container-fluid" id="footer">
+            <div class="container-fluid" id="lfooter">
                 <?php require_once(__DIR__ . "/components/footer.php"); ?>
             </div>
         </footer>

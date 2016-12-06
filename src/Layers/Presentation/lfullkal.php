@@ -17,8 +17,19 @@
                     </header>
                     <section>
                         <div class="page-content">
-                            <a href="navcontroller.php?page=lfullkal" class="btn btn-link pull-right">Bekijk de volledige agenda</a>
-                            <h4>Kalender <small>komende evenementen</small></h4>
+                            <a href="navcontroller.php?page=lprint" class="">Printversie</a>
+                            <select id="yearselector" onchange="changeYear()" class="btn btn-warning pull-right">
+                                <?php
+                                    foreach ($yearsDD as $year) {
+                                        if($year == $_SESSION['year']){
+                                            print("<option value='".$year."' selected>".$year."</option>");
+                                        } else {
+                                            print("<option value='".$year."'>".$year."</option>");
+                                        }
+                                    }
+                                ?>
+                            </select>
+                            <h4>Kalender <?= $_SESSION['year'] ?></h4>
                             <?php
                                 foreach ($kalender as $value) {
                                     $arraylength = count($value);
@@ -33,7 +44,7 @@
                                         }
                                         print("<div class='panel-body'>");
                                             if($d['event'] == null){
-                                                print("<p><span class='glyphicon glyphicon-time'></span> <strong>".$d['time']."</strong></p>");
+                                                print("<p><span class='glyphicon glyphicon-time'></span><strong>".$d['time']."</strong></p>");
                                             } else {
                                                 print("<p><span class='glyphicon glyphicon-time'></span> <strong>".$d['time']." ".$d['event']."</strong></p>");
                                             }
@@ -64,6 +75,17 @@
         </footer>
         <script>
             $('#lhome').addClass("active");
+            function changeYear(){
+                var year = $('#yearselector').val();
+                window.location.href = "changeYear.php?year=" + year;
+            }
         </script>
     </body>
 </html>
+
+<!--
+
+    <div class='panel-heading'></div>
+    </div>
+</div>
+-->

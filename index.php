@@ -57,6 +57,19 @@ if(!isset($_SESSION["login"]) /*|| !$_SESSION["login"]*/){
 				$kSVC = new KalenderSVC();
 				$weekdagen = $kSVC->daysDutch();
 				$kalender = $kSVC->getKalender();
+				break;
+			case 'lfullkal':
+				$kSVC = new KalenderSVC();
+				$weekdagen = $kSVC->daysDutch();
+				$kalender = $kSVC->getFullKalender($_SESSION['year']);
+				$yearsDD = $kSVC->yearsDropDown();
+				break;
+			case 'lprint':
+				$kSVC = new KalenderSVC();
+				$weekdagen = $kSVC->daysDutch();
+				$kalender = $kSVC->getAll($_SESSION['year']);
+				$yearsDD = $kSVC->yearsDropDown();
+				break;
 			case 'lformulieren':
 				$forms = Filegetter::getAll('formulieren');
 				break;

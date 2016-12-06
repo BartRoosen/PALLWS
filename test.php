@@ -7,4 +7,4 @@ use Layers\Business\Filegetter;
 use Layers\Business\KalenderSVC;
 use Layers\Business\EventsSVC;
 
-print_r(KalenderSVC::getKalender());
+print_r(KalenderSVC::getFullKalender(2016));

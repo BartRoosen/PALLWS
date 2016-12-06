@@ -73,10 +73,22 @@ body{
     	text-decoration: none;
 	}
 }
+#lfooter{
+	position: relative;
+	bottom: 0;
+	width: 100%;
+	background-color: rgb(48, 102, 93);
+	border-top: 5px solid rgb(24, 49, 45);
+	padding: 1em 0;
+	color: white;
+	a{
+		color: #fff;
+    	text-decoration: none;
+	}
+}
 .nav-item{
 	width: 100%;
 }
-
 
 @media screen and (min-hight: 770px){
 	#footer{
