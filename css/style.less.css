@@ -390,6 +390,11 @@ body{
 		width: 100%;
 	}
 }
+@media screen and (max-height: 736px){
+	.page-content{
+		padding: 2em !important;
+	}
+}
 /*
 	smart-phones up right
 */
@@ -438,7 +443,7 @@ body{
 	}
 	.page-content{
 		padding: 2em !important;
-		min-height:50vh;
+		min-height:70vh;
 	}
 	#footer, #lfooter{
 		position: relative;
@@ -455,9 +460,3 @@ body{
 	}
 }
 
-@media screen and (max-height: 736px){
-	.page-content{
-		padding: 2em !important;
-		min-height:60vh;
-	}
-}
