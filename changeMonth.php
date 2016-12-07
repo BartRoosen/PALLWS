@@ -1,4 +1,4 @@
-changeMonth.php<?php
+<?php
 
 require_once("bootstrap.php");  //do not forget this line as it wil make sure you can use the namespaces
 
