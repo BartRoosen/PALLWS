@@ -17,7 +17,7 @@
                     </header>
                     <section>
                         <div class="page-content">
-                            <select id="yearselector" onchange="changeYear()" class="btn btn-warning pull-right">
+                            <select id="yearselector" onchange="changeYear()" class="btn btn-warning pull-right" style="background: <?= $color ?>; border: 1px solid <?= $color ?>">
                                 <?php
                                     foreach ($yearsDD as $year) {
                                         if($year == $_SESSION['year']){

@@ -9,6 +9,8 @@ use Layers\Content\Text;
 
 SessionHandler::start();
 
+$color = "#009999";
+
 if(!isset($_SESSION["login"]) /*|| !$_SESSION["login"]*/){
 	
 	//Pages where no login is required come here
@@ -55,11 +57,14 @@ if(!isset($_SESSION["login"]) /*|| !$_SESSION["login"]*/){
 		switch ($_SESSION["page"]) {
 			case 'lhome':
 				$kSVC = new KalenderSVC();
+				$maanden = $kSVC->mothsDutch();
 				$weekdagen = $kSVC->daysDutch();
-				$kalender = $kSVC->getKalender();
+				$yearsDD = $kSVC->yearsDropDown();
+				$kalender = $kSVC->getMonthKalender($_SESSION['year'], $_SESSION['month']);
 				break;
 			case 'lfullkal':
 				$kSVC = new KalenderSVC();
+				$maanden = $kSVC->mothsDutch();
 				$weekdagen = $kSVC->daysDutch();
 				$kalender = $kSVC->getFullKalender($_SESSION['year']);
 				$yearsDD = $kSVC->yearsDropDown();
