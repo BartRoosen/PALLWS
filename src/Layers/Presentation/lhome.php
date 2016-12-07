@@ -10,14 +10,15 @@
                 <div class="col-md-8 col-lg-8 col-xl-6">
                     <header>
                         <div class="container-fluid" id="mobilenavbar">
-                            <?php require_once(__DIR__ . "/components/mobilenav.php"); ?>
+                            <?php //require_once(__DIR__ . "/components/mobilenav.php"); ?>
+                            <a href="login.php?action=logoff" class="btn btn-default">Afmelden</a>
                         </div>
                         <?php require_once(__DIR__ . "/components/header.php"); ?>
                         <?php require_once(__DIR__ . "/components/lnav.php"); ?>
                     </header>
                     <section>
                         <div class="page-content">
-                            <a href="navcontroller.php?page=lprint" class="">Printversie</a>
+                            <a href="navcontroller.php?page=lprint" class="mobno">Printversie</a>
                             <select id="yearselector" onchange="changeYear()" class="btn btn-warning pull-right" style="background: <?= $color ?>; border: 1px solid <?= $color ?>">
                                 <?php
                                     foreach ($yearsDD as $year) {
@@ -29,7 +30,7 @@
                                     }
                                 ?>
                             </select>
-                            <a href="navcontroller.php?page=lfullkal" class="btn btn-link pull-right">Bekijk de volledige agenda</a>
+                            <a href="navcontroller.php?page=lfullkal" class="btn btn-link pull-right mobno">Bekijk de volledige agenda</a>
                             <hr>
                                 <?php
                                     foreach ($maanden as $nummer => $maand) {
