@@ -14,12 +14,16 @@ if(isset($_GET['action']) && $_GET['action'] == 'logoff'){
 if(isset($_POST['submit']) && $_POST['submit'] == 1){
 	$hash = sha1($_POST['name'] . $_POST['pass']);
 	$user = UsersSVC::getUser($hash);
+	$page = 'lhome';
+	if(isset($_GET['mobilelogon']) && $_GET['mobilelogon'] != null){
+		$page = 'lfullkal';
+	}
 	if($user){
 		if($user == 'member'){
 			SessionHandler::setValue(array(
 					'login' => true,
 					'user' => 'member',
-					'page' => 'lhome',
+					'page' => $page,
 					'year' => date('Y'),
 					'month' => date('m'),
 				));
@@ -27,7 +31,7 @@ if(isset($_POST['submit']) && $_POST['submit'] == 1){
 			SessionHandler::setValue(array(
 					'login' => true,
 					'user' => 'admin',
-					'page' => 'lhome',
+					'page' => $page,
 					'year' => date('Y'),
 					'month' => date('m'),
 				));

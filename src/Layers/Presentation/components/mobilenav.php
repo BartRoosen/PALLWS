@@ -1,3 +1,8 @@
+
+
+<a class="btn btn-default" href="#" data-toggle="modal" data-target="#mobilenavmodal">test</a>
+
+<!--
 <nav class="navbar">
   <ul class="nav navbar-nav">
     <li class="nav-item dropdown">
@@ -30,3 +35,4 @@
     </li>
   </ul>
 </nav>
+-->
