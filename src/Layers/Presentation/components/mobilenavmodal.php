@@ -6,6 +6,7 @@
 	        <h3 class="modal-title" id="modal-title">Menu</h3>
 	    </div>
 	    <div class="modal-body">
+	    	<?php if(!isset($_SESSION['login'])){ ?>
 	    	<div id="mobile-menu">
 	    		<div class="form-group">
 		      		<a class="btn btn-default btn-lg mobimenavbutton" href="navcontroller.php?page=home">Home</a>
@@ -29,6 +30,12 @@
 		      		<a class="btn btn-default btn-lg mobimenavbutton" onclick="openMobileForm()">Leden</a>
 		      	</div>
 	    	</div>
+	    	<?php } elseif(isset($_SESSION['login']) && $_SESSION['login'] == true) { ?>
+
+	    	<div class="form-group">
+	      		<a class="btn btn-default btn-lg mobimenavbutton" href="login.php?action=logoff">Afmelden</a>
+	      	</div>
+	      	<?php } ?>
 		    <div id="mobilelogonform" hidden>
 		    	<div class="form-group">
 		      		<form action="login.php?mobilelogon=yes" method="post">

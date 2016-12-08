@@ -17,7 +17,7 @@
                     </header>
                     <section>
                         <div class="page-content">
-                            <a href="navcontroller.php?page=lprint" class="">Printversie</a>
+                            <a href="navcontroller.php?page=lprint" id="donotshowonmobile">Printversie</a>
                             <select id="yearselector" onchange="changeYear()" class="btn btn-warning pull-right" style="background: <?= $color ?>; border: 1px solid <?= $color ?>">
                                 <?php
                                     foreach ($yearsDD as $year) {
@@ -44,7 +44,8 @@
                                     print("<div class='panel-body'>");
                                         foreach ($arr_date as $date => $arr_details) {
                                             $arr_datestring = explode("-", $date);
-                                            $datestring = $weekdagen[$arr_datestring[0]] . " " . date('d-m-Y', strtotime($arr_datestring[1]));
+                                            $displaydate = $arr_datestring[1] . "-" . $arr_datestring[2] . "-" . $arr_datestring[3];
+                                            $datestring = $weekdagen[$arr_datestring[0]] . " " . date('d-m-Y', strtotime($displaydate));
                                             print("<div class='panel panel-default'>");
                                             print("<div class='panel-heading' style='background: rgb(220, 253, 248)'>");
                                                 print("<strong>".$datestring."</strong>");

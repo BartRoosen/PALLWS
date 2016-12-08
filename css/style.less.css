@@ -318,7 +318,7 @@ body{
 		#vrijwilligersgezocht{
 			color: orange;
 			font-size: 1.5em;
-			text-shadow: 2px 2px 3px #000000;
+			text-shadow: none;
 			text-align: right;
 			padding:0.3em;
 			margin-top: -3em;
@@ -397,6 +397,9 @@ body{
 	.page-content{
 		padding: 2em !important;
 	}
+	#donotshowonmobile{
+ 		display: none;
+ 	}
 }
 /*
 	smart-phones up right
@@ -406,6 +409,9 @@ body{
  		.container-fluid{
  			max-height: 7em;
  		}
+ 	}
+ 	#donotshowonmobile{
+ 		display: none;
  	}
  	.mobno{
  		display: none !important;

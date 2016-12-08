@@ -9,4 +9,4 @@ use Layers\Data\KalenderDAO;
 print_r(KalenderSVC::getMonthKalender(2016, 12));
 
 
-echo date('m');
+echo date('d-m-Y', strtotime('2016-02-15'));
