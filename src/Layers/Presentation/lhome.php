@@ -34,7 +34,7 @@
                             <hr>
                                 <?php
                                     foreach ($maanden as $nummer => $maand) {
-                                        if($nummer != 7 && $nummer != 8){
+                                        if($nummer){
                                             if($_SESSION['month'] != $nummer){
                                                 print("<a href='changeMonth.php?month=".$nummer."' class='btn btn-default' style='margin: 0 0.1em;'>".$maand."</a>");
                                             } else {
