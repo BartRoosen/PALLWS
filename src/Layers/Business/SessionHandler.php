@@ -32,7 +32,7 @@ class SessionHandler{
 		foreach ($arr as $value) {
 			unset($_SESSION[$value]);
 		}
-		self::start();
+		//self::start();
 	}
 
 	public function stop()

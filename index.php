@@ -5,6 +5,7 @@ use Layers\Business\SessionHandler;
 use Layers\Business\Filegetter;
 use Layers\Business\KalenderSVC;
 use Layers\Business\EventsSVC;
+use Layers\Business\DocumentsSVC;
 use Layers\Content\Text;
 
 SessionHandler::start();
@@ -110,7 +111,26 @@ if(!isset($_SESSION["login"]) /*|| !$_SESSION["login"]*/){
 				$events = EventsSVC::getActiveEvents();
 				$eventdetails = KalenderSVC::getEventById($_SESSION['edit']);
 				//unset($_SESSION['edit']);
-				break;			
+				break;	
+			case 'ldocs':
+				if(isset($_SESSION['upload-error']) && $_SESSION['upload-error'] != null) {
+					$error_message = $_SESSION['upload-error'];
+					SessionHandler::unsetValue(array('upload-error'));
+				} else {
+					$error_message = false;
+				}
+				if(isset($_SESSION['upload-message']) && $_SESSION['upload-message'] != null) {
+					$upload_message = $_SESSION['upload-message'];
+					SessionHandler::unsetValue(array('upload-message'));
+				} else {
+					$upload_message = false;
+				}
+				$dSVC = new DocumentsSVC();
+				$dList = $dSVC->docList("documenten");
+				$fList = $dSVC->docList("formulieren");
+				$gList = $dSVC->docList("getuigenissen");
+				$rList = $dSVC->docList("reglement");
+				break;		
 			default:
 				# code...
 				break;

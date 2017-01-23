@@ -11,6 +11,11 @@ if(isset($_GET["page"])){
 	$sh->setValue($arr = array(
 			'page' => $_GET['page'],
 		));
+	if(isset($_GET['path']) && $_GET['path'] != null) {
+		$sh->setValue($arr = array(
+				'path' => $_GET['path'],
+			));
+	}
 	header('location: ./');
 	exit(0);
 }
