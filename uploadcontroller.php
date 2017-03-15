@@ -37,7 +37,7 @@ if(isset($_SESSION['login']) && $_SESSION['login'] == 'admin'){
 			    $uploadOk = 0;
 			}
 			// Check file size
-			if ($_FILES["fileToUpload"]["size"] > 500000) {
+			if ($_FILES["fileToUpload"]["size"] > 1000000) {
 				$error_message = "Het bestand dat u wil uploaden is te groot...";
 			    $uploadOk = 0;
 			}

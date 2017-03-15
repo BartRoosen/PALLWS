@@ -137,6 +137,7 @@ if(!isset($_SESSION["login"]) /*|| !$_SESSION["login"]*/){
 				$fList = $dSVC->docList("formulieren");
 				$gList = $dSVC->docList("getuigenissen");
 				$rList = $dSVC->docList("reglement");
+				$sList = $dSVC->docList("statuten");
 				break;		
 			default:
 				# code...

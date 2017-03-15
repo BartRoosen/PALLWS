@@ -166,7 +166,39 @@
                                             </table>
                                         </div>
                                         <div class="panel-footer">
-                                            <a href="navcontroller.php?page=ldocs-form&path=reglement" class="btn btn-primary btn-xs">Rgelement toevoegen</a>
+                                            <a href="navcontroller.php?page=ldocs-form&path=reglement" class="btn btn-primary btn-xs">Regelement toevoegen</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            Statuten
+                                        </div>
+                                        <div class="panel-body">
+                                            <table class="table table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Naam</th>
+                                                        <th class="text-right">Actie</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <?php
+                                                        foreach ($sList as $file) {
+                                                            $path = "reglement/" . $file;
+                                                            print("<tr>");
+                                                            print("<td><a href='statuten/".$file."' target='_blank'>".$file."</a></td>");
+                                                            print("<td class='text-right'>
+                                                                        <a href='uploadcontroller.php?file=statuten/".$file."' class='btn btn-danger btn-xs'><span class='glyphicon glyphicon-trash'></span></button>
+                                                                   </td>");
+                                                            print("</tr>");
+                                                        }
+                                                    ?>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="panel-footer">
+                                            <a href="navcontroller.php?page=ldocs-form&path=statuten" class="btn btn-primary btn-xs">Statuten toevoegen</a>
                                         </div>
                                     </div>
                                 </div>
