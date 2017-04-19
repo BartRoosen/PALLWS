@@ -138,6 +138,7 @@
                                             <a href="navcontroller.php?page=ldocs-form&path=getuigenissen" class="btn btn-primary btn-xs">Getuigenis toevoegen</a>
                                         </div>
                                     </div>
+                                    <!--
                                     <div class="panel panel-default">
                                         <div class="panel-heading">
                                             Reglement
@@ -152,6 +153,7 @@
                                                 </thead>
                                                 <tbody>
                                                     <?php
+                                                    /*
                                                         foreach ($rList as $file) {
                                                             $path = "reglement/" . $file;
                                                             print("<tr>");
@@ -161,6 +163,7 @@
                                                                    </td>");
                                                             print("</tr>");
                                                         }
+                                                    */
                                                     ?>
                                                 </tbody>
                                             </table>
@@ -169,7 +172,7 @@
                                             <a href="navcontroller.php?page=ldocs-form&path=reglement" class="btn btn-primary btn-xs">Regelement toevoegen</a>
                                         </div>
                                     </div>
-
+                                    -->
                                     <div class="panel panel-default">
                                         <div class="panel-heading">
                                             Statuten

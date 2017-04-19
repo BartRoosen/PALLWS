@@ -17,14 +17,7 @@
                     </header>
                     <section>
                         <div class="page-content">
-                            <h4>Reglement</h4>
-                            <ul>
-                            <?php
-                                foreach ($forms as $value) {
-                                    print("<li><a href='".$value['path']."' target='_blank'>".$value['fullname']."</a></li>");
-                                }
-                            ?>
-                            </ul>
+                            
                         </div>
                     </section>
                 </div>
